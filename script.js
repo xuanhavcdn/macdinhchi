@@ -182,4 +182,35 @@ document.addEventListener("DOMContentLoaded", () => {
       closeImageModal();
     }
   });
+
+  // Hamburger Menu Functionality
+  const hamburger = document.querySelector(".hamburger");
+  const mainMenu = document.querySelector(".main-menu");
+
+  if (hamburger && mainMenu) {
+    hamburger.addEventListener("click", () => {
+      const isExpanded = hamburger.getAttribute("aria-expanded") === "true";
+      hamburger.setAttribute("aria-expanded", !isExpanded);
+      hamburger.classList.toggle("active");
+      mainMenu.classList.toggle("active");
+    });
+
+    // Close menu when clicking on a menu item
+    mainMenu.addEventListener("click", (e) => {
+      if (e.target.tagName === "A") {
+        hamburger.setAttribute("aria-expanded", "false");
+        hamburger.classList.remove("active");
+        mainMenu.classList.remove("active");
+      }
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener("click", (e) => {
+      if (!hamburger.contains(e.target) && !mainMenu.contains(e.target)) {
+        hamburger.setAttribute("aria-expanded", "false");
+        hamburger.classList.remove("active");
+        mainMenu.classList.remove("active");
+      }
+    });
+  }
 });
