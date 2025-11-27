@@ -60,15 +60,29 @@ footer {
   box-sizing: border-box;
   padding: 13px 24px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   background: white;
   align-items: center;
+}
+
+.School-main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .School h1 {
   margin: 0;
   font-size: 1rem;
   text-align: center;
+}
+
+.School-subtitle {
+  margin: 4px 0 0;
+  font-size: 0.9rem;
+  text-align: center;
+  color: #555;
 }
 
 .School .img {
