@@ -70,6 +70,17 @@
       </div>
       <div id="gallery-grid" class="gallery-grid" aria-live="polite"></div>
     </section>
+
+    <!-- Image Preview Modal -->
+    <div id="image-modal" class="image-modal" aria-hidden="true">
+      <div class="modal-backdrop"></div>
+      <div class="modal-content">
+        <button class="modal-close" aria-label="Đóng">&times;</button>
+        <img id="modal-image" src="" alt="">
+        <div class="modal-caption" id="modal-caption"></div>
+      </div>
+    </div>
+
     <div class="clock" aria-live="polite">
       <span id="clock-weekday"></span>, ngày<span id="clock-date"></span>, lúc<span
         id="clock-time"

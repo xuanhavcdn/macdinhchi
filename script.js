@@ -129,6 +129,10 @@ document.addEventListener("DOMContentLoaded", () => {
             : img.group === "congnghe"
             ? "Ảnh chuyên đề công nghệ và hành trình lịch sử"
             : "Ảnh chuyên đề thiết kế lớp học mơ ước";
+
+        // Add click event for image preview
+        image.addEventListener("click", () => openImageModal(img.src, image.alt));
+
         div.appendChild(image);
         gallery.appendChild(div);
       });
@@ -146,4 +150,39 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   }
+
+  // Image Modal Functions
+  function openImageModal(src, alt) {
+    const modal = document.getElementById("image-modal");
+    const modalImg = document.getElementById("modal-image");
+    const modalCaption = document.getElementById("modal-caption");
+
+    modalImg.src = src;
+    modalImg.alt = alt;
+    modalCaption.textContent = alt;
+
+    modal.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden"; // Prevent background scrolling
+  }
+
+  function closeImageModal() {
+    const modal = document.getElementById("image-modal");
+    modal.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "auto"; // Restore scrolling
+  }
+
+  // Close modal when clicking backdrop or close button
+  document.addEventListener("click", (e) => {
+    const modal = document.getElementById("image-modal");
+    if (e.target === modal || e.target.classList.contains("modal-backdrop") || e.target.classList.contains("modal-close")) {
+      closeImageModal();
+    }
+  });
+
+  // Close modal with Escape key
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      closeImageModal();
+    }
+  });
 });
