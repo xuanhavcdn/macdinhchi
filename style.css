@@ -1,0 +1,189 @@
+/* Define Bootstrap color variables for potential future use 
+    --bs-primary: #0d6efd;
+    --bs-secondary: #6c757d;
+    --bs-success: #198754;
+    --bs-info: #0dcaf0;
+    --bs-warning: #ffc107;
+    --bs-danger: #dc3545;
+    --bs-light: #f8f9fa;
+    --bs-dark: #212529;
+    --color-md: #0E36BF;
+    --background-color:#0E6FF1
+*/
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 0;
+  min-height: 100vh;
+  background: #ecf570;
+}
+
+/* ensure header and other top-level sections render above the viewer */
+header {
+  order: 1; /* force header to appear first */
+  width: 100%;
+  background: #0e36bf;
+  padding: 16px 24px;
+  box-sizing: border-box;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  z-index: 2;
+
+  position: sticky;
+  top: 0;
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+}
+
+footer {
+  order: 99; /* force header to appear first */
+  width: 100%;
+  background: #0e36bf;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  padding: 12px 24px;
+}
+
+.School {
+  order: 0; /* appear after header */
+  width: 100%;
+  box-sizing: border-box;
+  padding: 13px 24px;
+  display: flex;
+  justify-content: center;
+  background: white;
+  align-items: center;
+}
+
+.School h1 {
+  margin: 0;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.School .img {
+  height: 50px;
+  margin-right: 16px;
+}
+
+.School a {
+  display: flex;
+  color: #0e36bf;
+  font-size: 20px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: Arial;
+  font-weight: bolder;
+}
+
+.image-container {
+  order: 3;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 0;
+}
+
+.schoolimage {
+  width: 60%;
+}
+
+.clock {
+  order: 2;
+  width: 100%;
+  padding: 12px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  box-sizing: border-box;
+  background-color: #ffffff;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  font-weight: 500;
+  color: #0e36bf;
+}
+
+/* viewer centered below the header */
+#docx-viewer {
+  order: 98; /* appear after header and .School */
+  width: 100%;
+  max-width: 960px;
+  padding: 24px;
+  box-sizing: border-box;
+  background: #ecf570;
+}
+
+/* better default typography for converted content */
+#docx-viewer * {
+  line-height: 1.45;
+  color: #111;
+}
+
+/* make links inside converted docx follow the page color */
+#docx-viewer a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+.docx-error {
+  display: flex;
+  justify-content: center;
+  padding: 16px 0;
+}
+
+/* header typography */
+header h1 {
+  margin: 0;
+  font-size: 1.25rem;
+  text-align: center;
+  color: white;
+}
+
+/* main navigation menu */
+nav {
+  margin-top: 8px;
+}
+
+.main-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+}
+
+.main-menu li {
+  margin: 0;
+}
+
+.main-menu a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.main-menu a:hover,
+.main-menu a:focus {
+  text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 1rem;
+  }
+  .main-menu {
+    gap: 8px;
+  }
+  .main-menu a {
+    font-size: 0.85rem;
+  }
+  #docx-viewer {
+    padding: 16px;
+  }
+}
