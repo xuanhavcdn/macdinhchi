@@ -106,33 +106,7 @@ footer {
   color: #0e36bf;
 }
 
-/* viewer centered below the header */
-#docx-viewer {
-  order: 98; /* appear after header and .School */
-  width: 100%;
-  max-width: 960px;
-  padding: 24px;
-  box-sizing: border-box;
-  background: #ecf570;
-}
-
-/* better default typography for converted content */
-#docx-viewer * {
-  line-height: 1.45;
-  color: #111;
-}
-
-/* make links inside converted docx follow the page color */
-#docx-viewer a {
-  color: inherit;
-  text-decoration: underline;
-}
-
-.docx-error {
-  display: flex;
-  justify-content: center;
-  padding: 16px 0;
-}
+/* (docx viewer removed) */
 
 /* header typography */
 header h1 {
@@ -182,8 +156,5 @@ nav {
   }
   .main-menu a {
     font-size: 0.85rem;
-  }
-  #docx-viewer {
-    padding: 16px;
   }
 }
