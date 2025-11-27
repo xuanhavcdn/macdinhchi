@@ -123,6 +123,65 @@ footer {
   border: 0;
 }
 
+/* gallery section on Phụ lục minh họa page */
+.gallery-section {
+  order: 4;
+  width: 100%;
+  max-width: 960px;
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+.gallery-section h2 {
+  margin: 0 0 16px;
+  font-size: 1.25rem;
+  text-align: center;
+  color: #0e36bf;
+  text-transform: uppercase;
+}
+
+.gallery-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.gallery-filter {
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: 1px solid #0e36bf;
+  background: white;
+  color: #0e36bf;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.gallery-filter.active {
+  background: #0e36bf;
+  color: #ffffff;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.gallery-item {
+  background: white;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-item img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 .clock {
   order: 2;
   width: 100%;
@@ -202,6 +261,12 @@ nav {
   .schoolimage,
   .video-wrapper {
     width: 100%;
+  }
+  .gallery-section {
+    padding: 16px;
+  }
+  .gallery-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
   header {
     padding: 12px 16px;
